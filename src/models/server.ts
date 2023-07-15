@@ -2,6 +2,7 @@ import express,{Application} from "express";
 import routesArticulo from "../routes/articulo";
 import cors from 'cors';
 import routesUser from "../routes/user";
+import routesPedido from "../routes/pedido";
 import { Articulo } from "./articulo";
 import { User } from "./user";
 import { Pedido } from "./pedido";
@@ -28,6 +29,7 @@ class Server{
     routes(){
         this.app.use("/api/articulos",routesArticulo);
         this.app.use("/api/users",routesUser);
+        this.app.use("/api/pedidos",routesPedido);
     }
     midlewares(){
         this.app.use(express.json());
