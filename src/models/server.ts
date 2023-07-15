@@ -4,6 +4,7 @@ import cors from 'cors';
 import routesUser from "../routes/user";
 import { Articulo } from "./articulo";
 import { User } from "./user";
+import { Pedido } from "./pedido";
 
 class Server{
 
@@ -37,6 +38,7 @@ class Server{
         try {
             await Articulo.sync();
             await User.sync();
+            await Pedido.sync();
         } catch (error) {
             
         }

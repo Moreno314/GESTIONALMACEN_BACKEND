@@ -18,6 +18,7 @@ const cors_1 = __importDefault(require("cors"));
 const user_1 = __importDefault(require("../routes/user"));
 const articulo_2 = require("./articulo");
 const user_2 = require("./user");
+const pedido_1 = require("./pedido");
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -46,6 +47,7 @@ class Server {
             try {
                 yield articulo_2.Articulo.sync();
                 yield user_2.User.sync();
+                yield pedido_1.Pedido.sync();
             }
             catch (error) {
             }
