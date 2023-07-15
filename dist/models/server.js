@@ -16,9 +16,10 @@ const express_1 = __importDefault(require("express"));
 const articulo_1 = __importDefault(require("../routes/articulo"));
 const cors_1 = __importDefault(require("cors"));
 const user_1 = __importDefault(require("../routes/user"));
+const pedido_1 = __importDefault(require("../routes/pedido"));
 const articulo_2 = require("./articulo");
 const user_2 = require("./user");
-const pedido_1 = require("./pedido");
+const pedido_2 = require("./pedido");
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -36,6 +37,7 @@ class Server {
     routes() {
         this.app.use("/api/articulos", articulo_1.default);
         this.app.use("/api/users", user_1.default);
+        this.app.use("/api/pedidos", pedido_1.default);
     }
     midlewares() {
         this.app.use(express_1.default.json());
@@ -47,7 +49,7 @@ class Server {
             try {
                 yield articulo_2.Articulo.sync();
                 yield user_2.User.sync();
-                yield pedido_1.Pedido.sync();
+                yield pedido_2.Pedido.sync();
             }
             catch (error) {
             }

@@ -4,7 +4,7 @@ import { deletePedido, getPedido, getPedidos, postPedido, updatePedido } from ".
 
 const router =Router();
 
-router.get("/",getPedidos)
+router.get("/",getPedidos);
 router.get('/:id', getPedido);
 router.delete('/:id', deletePedido);
 router.post('/', postPedido);

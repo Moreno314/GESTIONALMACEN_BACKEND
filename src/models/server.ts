@@ -29,7 +29,7 @@ class Server{
     routes(){
         this.app.use("/api/articulos",routesArticulo);
         this.app.use("/api/users",routesUser);
-        this.app.use("/api/pedidos",routesPedido);
+        this.app.use("/api/pedidos", routesPedido);
     }
     midlewares(){
         this.app.use(express.json());
